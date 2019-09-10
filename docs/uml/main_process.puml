@@ -1,0 +1,16 @@
+@startuml
+
+title 任务系统流程图
+
+actor "用户" as user
+participant "定时系统" as cli
+participant "应用项目系统" as projectA
+
+user -> projectA: 开发任务 1
+user -> cli: 设定 projectA's job
+cli -> projectA: 定时触发 projectA's job
+
+
+user -> cli: 查看
+
+@enduml

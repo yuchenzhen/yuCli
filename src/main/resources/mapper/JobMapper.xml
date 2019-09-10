@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.white.ycli.mapper.JobMapper">
+    <insert id="saveJob">
+        INSERT INTO `orm_job` (`id`,
+            `url`,
+            `params`,
+            `excute_time`,
+            `project_id`)
+        VALUES (#{job.id},
+        #{job.url},
+        #{job.params},
+        #{job.excute_time},
+        #{job.project_id})
+    </insert>
+
+    <delete id="deleteById">
+        DELETE
+        FROM `orm_job`
+        WHERE `id` = #{id}
+    </delete>
+</mapper>

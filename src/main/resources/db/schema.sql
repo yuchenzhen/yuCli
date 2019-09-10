@@ -1,0 +1,36 @@
+DROP TABLE IF EXISTS `orm_job`;
+CREATE TABLE IF NOT EXISTS `orm_job` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '主键',
+  `url` VARCHAR(32) NOT NULL COMMENT '请求地址',
+  `params` VARCHAR(32) NOT NULL COMMENT '请求参数',
+  `excute_time` VARCHAR(32) NOT NULL COMMENT '执行时间',
+  `project_id` VARCHAR(32) NOT NULL UNIQUE COMMENT '所属项目 id'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='orm_job 表';
+
+CREATE TABLE IF NOT EXISTS `orm_jobResult` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '主键'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='orm_jobResult 表';
+
+
+CREATE TABLE IF NOT EXISTS `orm_project` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '主键',
+  `userId` VARCHAR(32) NOT NULL COMMENT '项目所属人',
+  `userGroup` VARCHAR(32) NOT NULL COMMENT '项目所属组',
+  `name` VARCHAR(32) NOT NULL COMMENT '项目名称'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='orm_project 表';
+
+CREATE TABLE IF NOT EXISTS `orm_user` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '主键',
+  `name` VARCHAR(32) NOT NULL COMMENT '用户名',
+  `userGroup` VARCHAR(32) NOT NULL COMMENT '用户组',
+  `password` VARCHAR(32) NOT NULL COMMENT '加密后的密码',
+  `salt` VARCHAR(32) NOT NULL COMMENT '加密使用的盐',
+  `email` VARCHAR(32) NOT NULL COMMENT '邮箱',
+  `phoneNumber` VARCHAR(32) NOT NULL COMMENT '手机号码',
+  `status` VARCHAR(32) NOT NULL COMMENT '状态，-1：逻辑删除，0：禁用，1：启用',
+  `createTime` VARCHAR(32) NOT NULL COMMENT '创建时间',
+  `lastLoginTime` VARCHAR(32) NOT NULL COMMENT '上次登录时间',
+  `lastUpdateTime` VARCHAR(32) NOT NULL COMMENT '上次更新时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='orm_user 表';
+
+

@@ -1,0 +1,23 @@
+@startuml
+
+class User {
+
+}
+
+class Project {
+
+}
+
+class Job {
+
+}
+
+class JobResult {
+
+}
+
+User "1" -- "N" Project
+Project "1" --"N"  Job
+Job "1" -  "N" JobResult
+
+@enduml
