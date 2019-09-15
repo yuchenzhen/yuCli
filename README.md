@@ -18,5 +18,5 @@
 - 项目框架：Spring Boot
 - DB:  Mysql
 - ORM: Mybatis
-- 定时任务框架：
+- 定时任务框架：Quartz
 - 后台前框库： React
